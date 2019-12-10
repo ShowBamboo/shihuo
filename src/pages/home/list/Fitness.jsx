@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { RecommendWrap } from "./styledRecommend";
+import { ListWrap } from "./styledList";
 
 import { get } from "utils/http";
 
@@ -21,7 +21,7 @@ export class Fitness extends Component {
 
   render() {
     return (
-      <RecommendWrap>
+      <ListWrap>
         <div className="list-view">
           <ul id="shihuo-news">
             {this.state.result.map((value, index) => {
@@ -99,7 +99,7 @@ export class Fitness extends Component {
             })}
           </ul>
         </div>
-      </RecommendWrap>
+      </ListWrap>
     );
   }
 }

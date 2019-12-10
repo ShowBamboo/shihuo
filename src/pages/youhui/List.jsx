@@ -1,21 +1,39 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
-import { ListWrap } from "./styledList";
+import { ListWrap } from "../home/list/styledList";
 
 import { get } from "utils/http";
 
-export class Recommend extends Component {
+const mapState = state => ({
+  url: state.youhui.url
+});
+
+class List extends Component {
   state = {
     result: []
   };
 
   async componentDidMount() {
     let data = await get({
-      url: "/api/homefis/getNews?pageSize=20&param_str=&type=&channel_type="
+      url: "/api/youhui/list?r=999&page=1&page_size=30&publish_date="
     });
     this.setState({
       result: data.data
     });
+  }
+
+  async componentWillReceiveProps(nextProps, prevProps) {
+    // 当传入的url发生变化的时候，更新state
+
+    if (nextProps.url !== prevProps.url) {
+      let data = await get({
+        url: nextProps.url
+      });
+      this.setState({
+        result: data.data
+      });
+    }
   }
 
   render() {
@@ -32,57 +50,43 @@ export class Recommend extends Component {
                   >
                     <div className="imgs">
                       <span className="get_imgs">
-                        <img
-                          src={`${value.data.img}`}
-                          alt=""
-                          className="lazy"
-                        />
+                        <img src={`${value.img}`} alt="" className="lazy" />
                       </span>
                     </div>
                     <div className="details_box">
-                      <h2>{value.data.title}</h2>
-                      {value.data.avatar ? (
+                      <h2>{value.title}</h2>
+                      {value.avatar ? (
                         <div className="desc face">
                           <span>
                             <img
                               className="lazy"
                               alt=""
-                              src={`${value.data.avatar}`}
+                              src={`${value.avatar}`}
                             />
                           </span>
-                          {value.data.author_name}
+                          {value.author_name}
                         </div>
-                      ) : value.data.intro ? (
+                      ) : value.intro ? (
                         <p className="desc single3">
                           <img
                             src="//sh1.hoopchina.com.cn/images/trademobile/quote_left.png"
                             alt=""
                           />
-                          {value.data.intro}
+                          {value.intro}
                           <img
                             src="//sh1.hoopchina.com.cn/images/trademobile/quote_right.png"
                             alt=""
                           />
                         </p>
                       ) : (
-                        <p className="subtitle">{value.data.subtitle}</p>
+                        <p className="subtitle">{value.subtitle}</p>
                       )}
 
                       <div className="from">
-                        {value.data.price ? (
-                          <div className="price">
-                            {value.data.merchant}&nbsp;
-                            <span>¥{value.data.price}</span>
-                          </div>
-                        ) : value.data.merchant ? (
-                          <div className="column_name">
-                            &nbsp;{value.data.merchant}
-                          </div>
-                        ) : (
-                          <div className="column_name">
-                            <span>败鞋清单</span>
-                          </div>
-                        )}
+                        <div className="column_name">
+                          &nbsp;{value.business}
+                        </div>
+                        <div className="date">{value.date}</div>
                       </div>
                     </div>
                   </a>
@@ -96,4 +100,4 @@ export class Recommend extends Component {
   }
 }
 
-export default Recommend;
+export default connect(mapState, null)(List);

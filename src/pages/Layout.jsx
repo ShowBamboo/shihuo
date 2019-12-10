@@ -1,7 +1,8 @@
 import React from "react";
 import { TabBar } from "antd-mobile";
 
-import Home from "./Home";
+import Home from "./home/Home";
+import Youhui from "./youhui/Youhui";
 
 class Layout extends React.Component {
   constructor(props) {
@@ -92,7 +93,7 @@ class Layout extends React.Component {
             }}
             data-seed="logId1"
           >
-            <div>2</div>
+            <Youhui></Youhui>
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -164,7 +165,7 @@ class Layout extends React.Component {
               });
             }}
           >
-            <div>4</div>
+            <div>5</div>
           </TabBar.Item>
         </TabBar>
       </div>

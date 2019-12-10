@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-import { SearchWrap } from "./styledSearch.js";
+import { SearchWrap } from "./styledSearch";
 
 class Search extends Component {
   render() {
     return (
       <SearchWrap>
-        <div className="search_bar">
+        <div className="search_bar" style={{ background: this.props.bgColor }}>
           <form
             action="//m.shihuo.cn/search/searchResult/all"
             id="searchBox"
@@ -20,7 +20,7 @@ class Search extends Component {
                   className="input"
                   name="keywords"
                   value=""
-                  placeholder="搜索商品，品牌"
+                  placeholder={this.props.title}
                   id="searchVal"
                   readOnly={true}
                 />
