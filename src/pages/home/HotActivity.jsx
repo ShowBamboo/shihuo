@@ -10,7 +10,7 @@ export class HotActivity extends Component {
           <h3>热门活动</h3>
           <ul>
             <li>
-              <a href="http://www.shihuo.cn/app/assets/youhui/1.0.2/brandSale.html">
+              <a href="javascripts:;">
                 <div className="img">
                   <img
                     src="http://shihuo.hupucdn.com/appHome/201808/1710/5e683699826e2a13abd239e4e4e36793.jpg"
@@ -24,7 +24,7 @@ export class HotActivity extends Component {
               </a>
             </li>
             <li>
-              <a href="http://www.shihuo.cn/article/detail/19901.html">
+              <a href="javascripts:;">
                 <div className="img">
                   <img
                     src="http://shihuo.hupucdn.com/appZone/201811/1214/2720301b13ee5c2b0003f78125b698ea.jpg"
@@ -38,7 +38,7 @@ export class HotActivity extends Component {
               </a>
             </li>
             <li>
-              <a href="http://t.shihuo.cn/m/533.html">
+              <a href="javascripts:;">
                 <div className="img">
                   <img
                     src="http://shihuo.hupucdn.com/appZone/201812/0411/e8dd17f83bc977f0d7014a077ed9d821.jpg"
@@ -52,7 +52,7 @@ export class HotActivity extends Component {
               </a>
             </li>
             <li>
-              <a href="http://www.shihuo.cn/article/detail/21332.html">
+              <a href="javascripts:;">
                 <div className="img">
                   <img
                     src="http://shihuo.hupucdn.com/appZone/201811/2310/18c66c0697e87440978ffdc220ee7cf9.jpg"
@@ -66,7 +66,7 @@ export class HotActivity extends Component {
               </a>
             </li>
             <li>
-              <a href="https://m.shihuo.cn/column/246.html">
+              <a href="javascripts:;">
                 <div className="img">
                   <img
                     src="http://shihuo.hupucdn.com/appZone/201805/0911/8c8778d4d917f0fb719a2f40ff3b71eb.jpg"
@@ -80,7 +80,7 @@ export class HotActivity extends Component {
               </a>
             </li>
             <li>
-              <a href="http://www.shihuo.cn/article/detail/19149.html">
+              <a href="javascripts:;">
                 <div className="img">
                   <img
                     src="http://shihuo.hupucdn.com/appZone/201811/1214/ea91521753d0e0f95f4a5c82094aee79.jpg"

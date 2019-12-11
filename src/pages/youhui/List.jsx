@@ -44,10 +44,7 @@ class List extends Component {
             {this.state.result.map((value, index) => {
               return (
                 <li key={index}>
-                  <a
-                    className="link-a clearfix"
-                    href="http://m.shihuo.cn/article/detail/43550.html#qk=news_general&amp;noticeid=313835"
-                  >
+                  <a className="link-a clearfix" href="javascripts:;">
                     <div className="imgs">
                       <span className="get_imgs">
                         <img src={`${value.img}`} alt="" className="lazy" />

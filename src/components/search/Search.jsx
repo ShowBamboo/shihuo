@@ -25,7 +25,7 @@ class Search extends Component {
                   readOnly={true}
                 />
               </div>
-              <a href="//m.shihuo.cn/user#qk=t_gr" className="me">
+              <a href="javascripts:;" className="me">
                 <img
                   src="//sh1.hoopchina.com.cn/fis_static/shihuomobile/static/homefis/widget/header/me_0442d1d.png"
                   alt=""

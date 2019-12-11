@@ -1,8 +1,10 @@
 import React from "react";
 import { TabBar } from "antd-mobile";
+import { Route, withRouter } from "react-router-dom";
 
 import Home from "./home/Home";
 import Youhui from "./youhui/Youhui";
+import Find from "./find/Find";
 
 class Layout extends React.Component {
   constructor(props) {
@@ -11,6 +13,12 @@ class Layout extends React.Component {
       selectedTab: "home",
       hidden: false,
       fullScreen: true
+    };
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    return {
+      selectedTab: props.location.pathname.substr(1)
     };
   }
 
@@ -57,10 +65,11 @@ class Layout extends React.Component {
               this.setState({
                 selectedTab: "home"
               });
+              this.props.history.push("/home");
             }}
             data-seed="logId"
           >
-            <Home></Home>
+            <Route path="/home" render={() => <Home></Home>}></Route>
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -90,10 +99,11 @@ class Layout extends React.Component {
               this.setState({
                 selectedTab: "youhui"
               });
+              this.props.history.push("/youhui");
             }}
             data-seed="logId1"
           >
-            <Youhui></Youhui>
+            <Route path="/youhui" render={() => <Youhui></Youhui>}></Route>
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -123,9 +133,10 @@ class Layout extends React.Component {
               this.setState({
                 selectedTab: "find"
               });
+              this.props.history.push("/find");
             }}
           >
-            <div>3</div>
+            <Route path="/find" render={() => <Find></Find>}></Route>
           </TabBar.Item>
           <TabBar.Item
             icon={{
@@ -173,4 +184,4 @@ class Layout extends React.Component {
   }
 }
 
-export default Layout;
+export default withRouter(Layout);

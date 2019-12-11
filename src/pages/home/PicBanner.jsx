@@ -10,7 +10,7 @@ export class PicBanner extends Component {
           <ul className="zone">
             <li className="zone0 clearfix">
               <a
-                href="http://m.shihuo.cn/basketball?haojiaId=13#qk=running0"
+                href="javascripts:;"
                 style={{ display: "block", overflow: "hidden" }}
               >
                 <div className="tit">
@@ -27,7 +27,7 @@ export class PicBanner extends Component {
             </li>
             <li className="zone1 clearfix">
               <a
-                href="http://m.shihuo.cn/running?haojiaId=34514#qk=running1"
+                href="javascripts:;"
                 style={{ display: "block", overflow: "hidden" }}
               >
                 <div className="tit">
@@ -44,7 +44,7 @@ export class PicBanner extends Component {
             </li>
             <li className="zone2 clearfix">
               <a
-                href="http://m.shihuo.cn/fitness#qk=running2"
+                href="javascripts:;"
                 style={{ display: "block", overflow: "hidden" }}
               >
                 <div className="tit">
@@ -61,7 +61,7 @@ export class PicBanner extends Component {
             </li>
             <li className="zone3 clearfix">
               <a
-                href="http://m.shihuo.cn/football?haojiaId=189#qk=running3"
+                href="javascripts:;"
                 style={{ display: "block", overflow: "hidden" }}
               >
                 <div className="tit">
@@ -78,7 +78,7 @@ export class PicBanner extends Component {
             </li>
             <li className="zone4 clearfix">
               <a
-                href="http://m.shihuo.cn/freestyle?haojiaId=27355#qk=running4"
+                href="javascripts:;"
                 style={{ display: "block", overflow: "hidden" }}
               >
                 <div className="tit">
@@ -95,7 +95,7 @@ export class PicBanner extends Component {
             </li>
             <li className="zone5 clearfix">
               <a
-                href="http://m.shihuo.cn/digital?haojiaId=vrDLSU#qk=running5"
+                href="javascripts:;"
                 style={{ display: "block", overflow: "hidden" }}
               >
                 <div className="tit">

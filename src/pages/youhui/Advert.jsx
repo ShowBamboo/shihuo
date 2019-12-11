@@ -7,7 +7,7 @@ export class Advert extends Component {
     return (
       <AdvertWrap>
         <div className="advert-radius">
-          <a href="http://www.shihuo.cn/column/130.html" className="advert">
+          <a href="javascripts:;" className="advert">
             <img
               src="http://shihuo.hupucdn.com/appHome/201902/0323/6de7db22aecf585cf2544cafd24c2bf9.png"
               alt="每日荐"

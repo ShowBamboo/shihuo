@@ -7,7 +7,7 @@ export class Hot extends Component {
     return (
       <HotWrap>
         <section className="hot clearfix">
-          <a className="block" href="http://m.shihuo.cn/youhui#qk=jryouhui">
+          <a className="block" href="javascripts:;">
             <h2>今日优惠</h2>
             <p className="desc">EQT 5折好价</p>
             <p className="imgs">
@@ -17,7 +17,7 @@ export class Hot extends Component {
               />
             </p>
           </a>
-          <a className="block" href="http://m.shihuo.cn/tuangou#qk=tuangou">
+          <a className="block" href="javascripts:;">
             <h2>限时团购</h2>
             <p className="desc">春节不打烊</p>
             <p className="imgs">
@@ -27,10 +27,7 @@ export class Hot extends Component {
               />
             </p>
           </a>
-          <a
-            className="block"
-            href="http://www.shihuo.cn/app/assets/lucky_draw_new/1.0.0/index.html#qk=haitao"
-          >
+          <a className="block" href="javascripts:;">
             <h2>免费抽奖</h2>
             <p className="desc">识货抽奖 天天免费</p>
             <p className="imgs">
