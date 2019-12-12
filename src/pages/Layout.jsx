@@ -5,6 +5,8 @@ import { Route, withRouter } from "react-router-dom";
 import Home from "./home/Home";
 import Youhui from "./youhui/Youhui";
 import Find from "./find/Find";
+import Zhuangbei from "./zhuangbei/Zhuangbei";
+import User from "./user/User";
 
 class Layout extends React.Component {
   constructor(props) {
@@ -154,9 +156,13 @@ class Layout extends React.Component {
               this.setState({
                 selectedTab: "zhuangbei"
               });
+              this.props.history.push("/zhuangbei");
             }}
           >
-            <div>4</div>
+            <Route
+              path="/zhuangbei"
+              render={() => <Zhuangbei></Zhuangbei>}
+            ></Route>
           </TabBar.Item>
           <TabBar.Item
             icon={{
@@ -174,9 +180,10 @@ class Layout extends React.Component {
               this.setState({
                 selectedTab: "user"
               });
+              this.props.history.push("user");
             }}
           >
-            <div>5</div>
+            <Route path="/user" render={() => <User></User>}></Route>
           </TabBar.Item>
         </TabBar>
       </div>

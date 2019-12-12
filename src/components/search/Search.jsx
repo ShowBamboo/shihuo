@@ -23,6 +23,7 @@ class Search extends Component {
                   placeholder={this.props.title}
                   id="searchVal"
                   readOnly={true}
+                  style={{ backgroundColor: this.props.inputBg }}
                 />
               </div>
               <a href="javascripts:;" className="me">
