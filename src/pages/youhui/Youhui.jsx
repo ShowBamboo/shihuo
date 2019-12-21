@@ -6,6 +6,7 @@ import Temai from "./Temai";
 import Advert from "./Advert";
 import Menu from "./Menu";
 import List from "./List";
+import GoTop from "components/goTop/GoTop";
 
 export class youhui extends Component {
   state = {
@@ -21,6 +22,7 @@ export class youhui extends Component {
         <Advert></Advert>
         <Menu></Menu>
         <List></List>
+        <GoTop></GoTop>
       </>
     );
   }

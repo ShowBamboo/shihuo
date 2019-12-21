@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Layout from "./pages/Layout";
+// import Layout from "./pages/Layout";
+import Index from "./pages/Index.jsx";
 import "assets/styles/reset.css";
 
 import { Provider } from "react-redux";
@@ -12,7 +13,7 @@ export class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <Layout></Layout>
+          <Index></Index>
         </Router>
       </Provider>
     );

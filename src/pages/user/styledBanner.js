@@ -41,3 +41,42 @@ export const BannerWrap = styled.div`
     }
   }
 `;
+
+export const MenuListWrap = styled.div`
+  .menu_list {
+    padding: 0.08rem;
+    background: #fff;
+    margin-bottom: 0.1rem;
+    .tit {
+      font-size: 14px;
+      color: #333;
+      background: url(//sh1.hoopchina.com.cn/fis_static/shihuomobile/static/user/border_88b19b4.png)
+        center center repeat-x;
+      background-size: 0.025rem;
+      span {
+        background: #fff;
+        padding: 0 10px;
+      }
+    }
+    ul {
+      display: flex;
+      align-items: center;
+      li {
+        width: 25%;
+        text-align: center;
+        color: #333;
+        font-size: 12px;
+        margin: 0.1rem 0;
+        position: relative;
+        a {
+          color: #444;
+          text-decoration: none;
+          display: block;
+          img {
+            width: 0.45rem;
+          }
+        }
+      }
+    }
+  }
+`;

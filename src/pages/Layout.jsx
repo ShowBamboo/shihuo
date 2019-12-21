@@ -20,7 +20,7 @@ class Layout extends React.Component {
 
   static getDerivedStateFromProps(props, state) {
     return {
-      selectedTab: props.location.pathname.substr(1)
+      selectedTab: props.location.pathname.substr(7)
     };
   }
 
@@ -67,11 +67,11 @@ class Layout extends React.Component {
               this.setState({
                 selectedTab: "home"
               });
-              this.props.history.push("/home");
+              this.props.history.push("/index/home");
             }}
             data-seed="logId"
           >
-            <Route path="/home" render={() => <Home></Home>}></Route>
+            <Route path="/index/home" render={() => <Home></Home>}></Route>
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -101,11 +101,14 @@ class Layout extends React.Component {
               this.setState({
                 selectedTab: "youhui"
               });
-              this.props.history.push("/youhui");
+              this.props.history.push("/index/youhui");
             }}
             data-seed="logId1"
           >
-            <Route path="/youhui" render={() => <Youhui></Youhui>}></Route>
+            <Route
+              path="/index/youhui"
+              render={() => <Youhui></Youhui>}
+            ></Route>
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -135,10 +138,10 @@ class Layout extends React.Component {
               this.setState({
                 selectedTab: "find"
               });
-              this.props.history.push("/find");
+              this.props.history.push("/index/find");
             }}
           >
-            <Route path="/find" render={() => <Find></Find>}></Route>
+            <Route path="/index/find" render={() => <Find></Find>}></Route>
           </TabBar.Item>
           <TabBar.Item
             icon={{
@@ -156,11 +159,11 @@ class Layout extends React.Component {
               this.setState({
                 selectedTab: "zhuangbei"
               });
-              this.props.history.push("/zhuangbei");
+              this.props.history.push("/index/zhuangbei");
             }}
           >
             <Route
-              path="/zhuangbei"
+              path="/index/zhuangbei"
               render={() => <Zhuangbei></Zhuangbei>}
             ></Route>
           </TabBar.Item>
@@ -180,10 +183,10 @@ class Layout extends React.Component {
               this.setState({
                 selectedTab: "user"
               });
-              this.props.history.push("user");
+              this.props.history.push("/index/user");
             }}
           >
-            <Route path="/user" render={() => <User></User>}></Route>
+            <Route path="/index/user" render={() => <User></User>}></Route>
           </TabBar.Item>
         </TabBar>
       </div>

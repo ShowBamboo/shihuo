@@ -7,7 +7,8 @@ import { BannerWrap } from "./styledBanner";
 class Banner extends Component {
   state = {
     data: ["1", "2", "3", "4", "5"],
-    imgHeight: this.props.height
+    imgHeight: this.props.height,
+    dotColor: this.props.dotColor || "#fff"
   };
   componentDidMount() {
     // simulate img loading
@@ -25,7 +26,7 @@ class Banner extends Component {
             autoplay={true}
             infinite={true}
             dotStyle={{ background: "rgba(255,255,255,0.4)" }}
-            dotActiveStyle={{ background: "#fff" }}
+            dotActiveStyle={{ background: this.state.dotColor }}
           >
             {this.state.data.map(val => (
               <a

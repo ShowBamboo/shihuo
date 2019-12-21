@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { get } from "utils/http";
+import BScroll from "better-scroll";
 
 import { ListWrap } from "./styledList";
 
@@ -14,6 +15,25 @@ export class List extends Component {
     });
     this.setState({
       result: data.data
+    });
+
+    let bScroll = new BScroll(document.getElementById("wrap"), {
+      pullUpLoad: true,
+      click: true,
+      probeType: 2
+    });
+
+    bScroll.on("pullingUp", async () => {
+      let resultMore = await get({
+        url: "/api/find/mobileList?tag_id=283&param_str=2019-12-14%2014:55:09"
+      });
+
+      this.setState({
+        result: [...this.state.result, ...resultMore.data]
+      });
+
+      bScroll.refresh();
+      bScroll.finishPullUp();
     });
   }
 

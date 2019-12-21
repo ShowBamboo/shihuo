@@ -5,6 +5,7 @@ import Menu from "./Menu";
 import Banner from "./Banner";
 import Tag from "./Tag";
 import Basketball from "pages/home/list/Basketball";
+import GoTop from "components/goTop/GoTop";
 
 class Zhuangbei extends Component {
   state = {
@@ -102,6 +103,7 @@ class Zhuangbei extends Component {
           最新推荐
         </div>
         <Basketball></Basketball>
+        <GoTop></GoTop>
       </>
     );
   }
