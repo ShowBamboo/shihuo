@@ -10,6 +10,7 @@ export const TopBarWrap = styled.div`
     text-align: center;
     z-index: 90;
     border-bottom: 1px solid #e6e6e6;
+
     .goback {
       position: absolute;
       left: 0;
@@ -300,13 +301,14 @@ export const CommentWrap = styled.div`
     .tag {
       margin-left: 0.1rem;
       border-bottom: 1px #f0f0f0 solid;
-      padding-bottom: 0.13rem;
-      height: 0.42rem;
+      /* padding-bottom: 0.1rem; */
+      min-height: 0.42rem;
       s {
         background-color: #f5f5f5;
         display: inline-block;
         padding: 0.03rem 0.08rem;
         margin-right: 0.1rem;
+        margin-bottom: 0.1rem;
         border-radius: 3px;
       }
       s.on {

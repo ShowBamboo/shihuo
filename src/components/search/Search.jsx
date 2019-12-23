@@ -6,7 +6,13 @@ class Search extends Component {
   render() {
     return (
       <SearchWrap>
-        <div className="search_bar" style={{ background: this.props.bgColor }}>
+        <div
+          className="search_bar"
+          style={{
+            background: this.props.bgColor,
+            position: this.props.position
+          }}
+        >
           <form
             action="//m.shihuo.cn/search/searchResult/all"
             id="searchBox"

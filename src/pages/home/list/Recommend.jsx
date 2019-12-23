@@ -1,12 +1,23 @@
 import React, { Component } from "react";
 import BScroll from "better-scroll";
 import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 
 import { ListWrap } from "./styledList";
 
 import { get } from "utils/http";
 
-export class Recommend extends Component {
+const mapDispatch = dispatch => ({
+  change(data) {
+    dispatch({
+      type: "change",
+      data
+    });
+  }
+});
+
+@connect(null, mapDispatch)
+class Recommend extends Component {
   state = {
     result: []
   };
@@ -52,8 +63,17 @@ export class Recommend extends Component {
     });
   }
 
-  handleClick = () => {
-    this.props.history.push("/detail");
+  //进入详情
+  handleClick = (id, img, title) => {
+    return () => {
+      this.props.change({
+        id,
+        img,
+        title
+      });
+
+      this.props.history.push("/detail");
+    };
   };
 
   render() {
@@ -64,7 +84,16 @@ export class Recommend extends Component {
             <ul id="shihuo-news">
               {this.state.result.map((value, index) => {
                 return (
-                  <li key={index} onClick={this.handleClick}>
+                  <li
+                    key={index}
+                    onClick={this.handleClick(
+                      value.data.href.split(".html")[0].split("/")[
+                        value.data.href.split(".html")[0].split("/").length - 1
+                      ],
+                      value.data.img,
+                      value.data.title
+                    )}
+                  >
                     <a className="link-a clearfix" href="javascripts:;">
                       <div className="imgs">
                         <span className="get_imgs">

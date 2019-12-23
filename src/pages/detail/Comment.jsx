@@ -2,21 +2,36 @@ import React, { useState, useEffect } from "react";
 import { get } from "utils/http";
 
 import { CommentWrap } from "./styledDetail";
+import { connect } from "react-redux";
 
-export default function Comment() {
+const mapState = state => ({
+  data: state.reducers.data
+});
+
+function Comment(props) {
   const [tags, settags] = useState([]);
   const [comments, setcomments] = useState([]);
+  const [tagid, settagid] = useState("0");
+  const [id, setid] = useState("73686");
+
   useEffect(() => {
     async function getData() {
       let result = await get({
-        url:
-          "/api/sports/getComment?id=134&tag_id=0&page=1&page_size=5&sort=hot"
+        url: `/api/sports/getComment?id=${id}&tag_id=${tagid}&page=1&page_size=5&sort=hot`
       });
       settags(result.data.tags);
       setcomments(result.data.comments);
+      setid(props.data.id);
     }
     getData();
-  }, []);
+  }, [tagid, props.data.id, id]);
+
+  let handleClick = tagid => {
+    return () => {
+      settagid(tagid);
+    };
+  };
+
   return (
     <CommentWrap>
       <div className="kb-box">
@@ -30,9 +45,17 @@ export default function Comment() {
           </s>
         </div>
         <div className="tag">
-          <s className="on">全部</s>
+          <s className={tagid === "0" ? "on" : ""} onClick={handleClick("0")}>
+            全部
+          </s>
           {tags.slice(1).map((value, index) => (
-            <s key={value.id}>{value.title}</s>
+            <s
+              key={value.id}
+              onClick={handleClick(value.id)}
+              className={tagid === value.id ? "on" : ""}
+            >
+              {value.title}
+            </s>
           ))}
         </div>
         {comments.map((value, index) => (
@@ -72,3 +95,5 @@ export default function Comment() {
     </CommentWrap>
   );
 }
+
+export default connect(mapState, null)(Comment);

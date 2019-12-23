@@ -73,7 +73,11 @@ class Menu extends Component {
   };
 
   clickSix = () => {
-    console.log(6);
+    let el1 = document.getElementById("menu-list-alertbox");
+    let el2 = document.getElementById("layerBox-bg");
+
+    el1.style.display = "block";
+    el2.style.display = "block";
   };
 
   render() {

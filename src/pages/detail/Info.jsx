@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
 
 import { InfoWrap } from "./styledDetail";
 
-export default function Info() {
+const mapState = state => ({
+  data: state.reducers.data
+});
+
+function Info(props) {
+  const [state, setstate] = useState({});
+
+  useEffect(() => {
+    setstate(props.data);
+  }, [props.data]);
+
   return (
     <InfoWrap>
-      <div className="h2">Nike Air Force 1</div>
+      <div className="h2">{state.title}</div>
       <div className="h3">
         <div className="t1">
           Air Force 1于1982年推出，由Nike公司的传奇设计师Bruce Kilgo...
@@ -96,3 +107,5 @@ export default function Info() {
     </InfoWrap>
   );
 }
+
+export default connect(mapState, null)(Info);

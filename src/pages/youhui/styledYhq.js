@@ -5,7 +5,7 @@ export const YhqWrap = styled.div`
     background-color: #f0f3f5;
     padding: 0.13rem 0.15rem;
     padding-top: 0.04rem;
-    margin-top: 0.45rem;
+    /* margin-top: 0.45rem; */
     span {
       font-size: 15px;
       font-weight: bolder;

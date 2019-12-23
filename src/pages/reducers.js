@@ -1,5 +1,6 @@
 const defaultState = {
-  url: ""
+  url: "",
+  data: {}
 };
 
 export default (state = defaultState, action) => {
@@ -8,6 +9,11 @@ export default (state = defaultState, action) => {
       return {
         url: action.url
       };
+    case "change":
+      return {
+        data: action.data
+      };
+
     default:
       return state;
   }

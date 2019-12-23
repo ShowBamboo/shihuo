@@ -1,14 +1,26 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import BScroll from "better-scroll";
 
 import { ListWrap } from "../home/list/styledList";
 
 import { get } from "utils/http";
 
 const mapState = state => ({
-  url: state.youhui.url
+  url: state.reducers.url
 });
 
+const mapDispatch = dispatch => ({
+  change(data) {
+    dispatch({
+      type: "change",
+      data
+    });
+  }
+});
+
+@connect(mapState, mapDispatch)
 class List extends Component {
   state = {
     result: []
@@ -20,6 +32,26 @@ class List extends Component {
     });
     this.setState({
       result: data.data
+    });
+
+    let bScroll = new BScroll(document.getElementById("youhuiWrap"), {
+      pullUpLoad: true,
+      click: true,
+      probeType: 2,
+      mouseWheel: true
+    });
+
+    bScroll.on("pullingUp", async () => {
+      let resultMore = await get({
+        url: `/api/youhui/list?r=999&page=2&page_size=30&publish_date=2019-12-23+15%3A52%3A24`
+      });
+
+      this.setState({
+        result: [...this.state.result, ...resultMore.data]
+      });
+
+      bScroll.refresh();
+      bScroll.finishPullUp();
     });
   }
 
@@ -36,6 +68,19 @@ class List extends Component {
     }
   }
 
+  //进入详情
+  handleClick = (id, img, title) => {
+    return () => {
+      this.props.change({
+        id,
+        img,
+        title
+      });
+
+      this.props.history.push("/detail");
+    };
+  };
+
   render() {
     return (
       <ListWrap>
@@ -43,7 +88,16 @@ class List extends Component {
           <ul id="shihuo-news">
             {this.state.result.map((value, index) => {
               return (
-                <li key={index}>
+                <li
+                  key={index}
+                  onClick={this.handleClick(
+                    value.href.split(".html")[0].split("/")[
+                      value.href.split(".html")[0].split("/").length - 1
+                    ],
+                    value.img,
+                    value.title
+                  )}
+                >
                   <a className="link-a clearfix" href="javascripts:;">
                     <div className="imgs">
                       <span className="get_imgs">
@@ -97,4 +151,4 @@ class List extends Component {
   }
 }
 
-export default connect(mapState, null)(List);
+export default withRouter(List);
