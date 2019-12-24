@@ -25,7 +25,7 @@ class Home extends Component {
               "http://shihuo.hupucdn.com/appHome/201901/1010/5480e24dc886bde3fd4c599d22330d65.png?imageView2/2/w/750/h/380/interlace/1",
               "http://shihuo.hupucdn.com/appHome/201901/0500/d63108ffbf581d59f8d3552e346b8258.jpg?imageView2/2/w/750/h/380/interlace/1"
             ]}
-            height={"175px"}
+            height={"1.75rem"}
           ></Banner>
           <Search title={this.state.value}></Search>
           <PicBanner></PicBanner>

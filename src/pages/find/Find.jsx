@@ -19,7 +19,7 @@ export class Find extends Component {
               "http://shihuo.hupucdn.com/appHome/201812/1023/736a64832b272c088c9fe01837b0ac4e.jpg?imageView2/2/w/750/h/268/interlace/1",
               "http://shihuo.hupucdn.com/appHome/201812/0900/d31d0002502c7181c272e5bac796375e.jpg?imageView2/2/w/750/h/268/interlace/1"
             ]}
-            height={"135px"}
+            height={"1.35rem"}
           ></Banner>
           <BlockList></BlockList>
           <HotBlock></HotBlock>

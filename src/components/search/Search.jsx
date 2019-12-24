@@ -1,8 +1,17 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 
 import { SearchWrap } from "./styledSearch";
 
+@withRouter
 class Search extends Component {
+  goSearch = () => {
+    this.props.history.push("/search");
+  };
+  goUser = () => {
+    this.props.history.push("/index/user");
+  };
+
   render() {
     return (
       <SearchWrap>
@@ -20,7 +29,7 @@ class Search extends Component {
             className="searchBox"
           >
             <div className="search_box">
-              <div className="search">
+              <div className="search" onClick={this.goSearch}>
                 <input
                   type="text"
                   className="input"
@@ -32,7 +41,7 @@ class Search extends Component {
                   style={{ backgroundColor: this.props.inputBg }}
                 />
               </div>
-              <a href="javascripts:;" className="me">
+              <a href="javascripts:;" className="me" onClick={this.goUser}>
                 <img
                   src="//sh1.hoopchina.com.cn/fis_static/shihuomobile/static/homefis/widget/header/me_0442d1d.png"
                   alt=""

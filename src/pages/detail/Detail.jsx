@@ -29,7 +29,7 @@ function Detail(props) {
             "http://shihuo.hupucdn.com/newsIndex11/201912/2317/9819a4d6bb5b01f0deaf86ee41cc5f11.jpg",
             "http://shihuo.hupucdn.com/def/20181112/a917bcb5589f64dccf497b0cb445d0531542013818.jpg"
           ]}
-          height={"375px"}
+          height={"3.75rem"}
           dotColor={"red"}
         ></Banner>
       </div>

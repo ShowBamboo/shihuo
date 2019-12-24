@@ -1,16 +1,32 @@
+/* eslint-disable */
 import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
+
+import { get } from "utils/http";
 
 import { SearchWrap } from "./styledSearch";
 
-export default function Search() {
+function Search(props) {
   const [reset, setreset] = useState("none");
-  let change = e => {
+  const [data, setdata] = useState([]);
+
+  let change = async e => {
     if (e.target.value) {
       setreset("inline-block");
     } else {
       setreset("none");
     }
+
+    let result = await get({
+      url: `/api/search/relatedKeywords?keywords=${e.target.value}`
+    });
+    setdata(result.data);
   };
+
+  let cancel = () => {
+    props.history.goBack();
+  };
+
   return (
     <SearchWrap>
       <div className="search_bar">
@@ -32,6 +48,7 @@ export default function Search() {
                 name="keywords"
                 placeholder="搜索商品，品牌"
                 id="searchVal"
+                autoFocus="autofocus"
                 onChange={change}
               />
               <input
@@ -41,17 +58,7 @@ export default function Search() {
                 style={{ display: reset }}
               />
             </div>
-            <a
-              href="//m.shihuo.cn/user#qk=t_gr"
-              className="me"
-              style={{ display: "none" }}
-            >
-              <img
-                src="//sh1.hoopchina.com.cn/fis_static/shihuomobile/static/homefis/widget/header/me_0442d1d.png"
-                alt=""
-              />
-            </a>
-            <a href="javascripts:;" className="cancel show">
+            <a href="javascripts:;" className="cancel show" onClick={cancel}>
               取消
             </a>
           </div>
@@ -62,7 +69,6 @@ export default function Search() {
           <dl>
             <dt>热门搜索</dt>
             <dd className="sear_hot">
-              <a href="javascripts:;"></a>
               <a href="javascripts:;">红包</a>
               <a href="javascripts:;">AJ11</a>
               <a href="javascripts:;">欧文4</a>
@@ -88,17 +94,18 @@ export default function Search() {
             </dd>
           </dl>
         </div>
-        <div className="inner" id="searchRelate" style={{ display: "none" }}>
+        <div className="inner" id="searchRelate" style={{ display: reset }}>
           <ul>
-            <li>
-              <a href="javascripts:;">eqt</a>
-            </li>
-            <li>
-              <a href="/search/searchResult/all?keywords=耳机">耳机</a>
-            </li>
+            {data.map((value, index) => (
+              <li key={index}>
+                <a href="javascripts:;">{value}</a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
     </SearchWrap>
   );
 }
+
+export default withRouter(Search);
