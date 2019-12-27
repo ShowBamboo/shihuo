@@ -328,9 +328,9 @@ export const SearchResultWrap = styled.div`
           margin-bottom: 0.1rem;
           background: #fff;
           ul {
-            padding-left: 0.26667rem;
+            padding-left: 0.1rem;
             li > a {
-              padding: 0.26667rem;
+              padding: 0.1rem;
               padding-left: 0;
               border-bottom: 1px solid #e6e6e6;
               display: flex;
@@ -340,34 +340,270 @@ export const SearchResultWrap = styled.div`
                 width: 30%;
                 float: left;
                 position: relative;
+                .get_imgs {
+                  display: block;
+                  img {
+                    width: 100%;
+                  }
+                }
               }
               .details_box {
                 width: 66%;
                 position: relative;
-                margin-left: 0.26667rem;
+                margin-left: 0.1rem;
                 display: flex;
                 justify-content: space-between;
                 flex-direction: column;
+                h2 {
+                  font-size: 0.15rem;
+                  color: #333;
+                  font-weight: 700;
+                  line-height: 0.2rem;
+                  max-height: 0.2rem;
+                  overflow: hidden;
+                }
+                .desc {
+                  font-size: 0.12rem;
+                  color: #999;
+                }
+                .btm {
+                  color: #999;
+                  font-size: 0.12rem;
+                  width: 100%;
+                  .price {
+                    float: left;
+                    color: #999;
+                    font-size: 0.12rem;
+                    span {
+                      color: #ff4338;
+                      font-size: 0.16rem;
+                      padding-right: 0.05rem;
+                    }
+                  }
+                  .guanzhu {
+                    float: right;
+                    text-align: left;
+                  }
+                }
               }
             }
           }
           .linkMore {
             text-align: center;
-            padding: 0.26667rem 0;
+            padding: 0.1rem 0;
             border-bottom: 1px solid #e6e6e6;
+            a {
+              font-size: 0.12rem;
+              color: #278ccf;
+              img {
+                margin-left: 0.05rem;
+                width: 0.05rem;
+              }
+            }
           }
         }
         .picblock {
           margin-bottom: 0.1rem;
           background: #fff;
+          .tit {
+            height: 0.4rem;
+            line-height: 0.4rem;
+            font-size: 0.15rem;
+            color: #333;
+            padding-left: 0.1rem;
+            border-bottom: 1px solid #e6e6e6;
+          }
+          .img_block {
+            border-bottom: 1px solid #e6e6e6;
+            width: 100%;
+            overflow: hidden;
+            padding: 0.05rem;
+            display: flex;
+            a {
+              display: block;
+              flex: 1;
+              padding: 0.05rem;
+              img {
+                width: 100%;
+              }
+            }
+          }
+          .linkMore {
+            text-align: center;
+            padding: 0.1rem 0;
+            border-bottom: 1px solid #e6e6e6;
+            a {
+              font-size: 0.12rem;
+              color: #278ccf;
+              img {
+                margin-left: 0.05rem;
+                width: 0.05rem;
+              }
+            }
+          }
         }
         .quanwSearch {
           margin-bottom: 0.1rem;
           background: #fff;
+          .tit {
+            height: 0.45rem;
+            line-height: 0.45rem;
+            font-size: 0.15rem;
+            color: #333;
+            padding-left: 0.1rem;
+            border-bottom: 1px solid #e6e6e6;
+            span {
+              color: #ff4338;
+            }
+          }
+          ul {
+            padding-left: 0.1rem;
+            li > a {
+              padding: 0.1rem;
+              padding-left: 0;
+              border-bottom: 1px solid #e6e6e6;
+              display: flex;
+              .imgs {
+                width: 30%;
+                float: left;
+                position: relative;
+                .get_imgs {
+                  height: 0;
+                  width: 100%;
+                  padding-bottom: 100%;
+                  display: block;
+                  img {
+                    width: 100%;
+                  }
+                }
+              }
+              .details_box {
+                width: 66%;
+                position: relative;
+                margin-left: 0.1rem;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                h2 {
+                  font-size: 0.15rem;
+                  color: #333;
+                  font-weight: 400;
+                  line-height: 0.2rem;
+                  max-height: 0.4rem;
+                  overflow: hidden;
+                  span {
+                    color: #ff4338;
+                  }
+                }
+                .price {
+                  color: #ff4338;
+                  font-size: 0.16rem;
+                }
+                .btm {
+                  color: #999;
+                  font-size: 0.12rem;
+                  width: 100%;
+                  .bus {
+                    float: left;
+                    color: #999;
+                    font-size: 0.12rem;
+                  }
+                }
+              }
+            }
+          }
+          .linkMore {
+            text-align: center;
+            padding: 0.1rem 0;
+            border-bottom: 1px solid #e6e6e6;
+            a {
+              font-size: 0.12rem;
+              color: #278ccf;
+              img {
+                margin-left: 0.05rem;
+                width: 0.05rem;
+              }
+            }
+          }
         }
         .shaiwuBlock {
           margin-bottom: 0.1rem;
           background: #fff;
+          .tit {
+            height: 0.4rem;
+            line-height: 0.4rem;
+            font-size: 0.15rem;
+            color: #333;
+            padding-left: 0.1rem;
+            border-bottom: 1px solid #e6e6e6;
+          }
+          .content {
+            border-bottom: 1px solid #e6e6e6;
+            .desc {
+              padding: 0 0.1rem;
+              h2 {
+                font-weight: 700;
+                font-size: 0.16rem;
+                padding-top: 0.05rem;
+                width: 100%;
+                overflow: hidden;
+                height: 0.35rem;
+                line-height: 0.35rem;
+                color: #444;
+              }
+              p {
+                font-size: 0.13rem;
+                color: #666;
+                height: 0.4rem;
+                line-height: 0.4rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                word-break: break-all;
+              }
+            }
+            .img_block {
+              width: 100%;
+              overflow: hidden;
+              padding: 0 0.05rem;
+              display: flex;
+              span {
+                display: block;
+                flex: 1;
+                padding: 0.05rem;
+                max-height: 1.2rem;
+                overflow: hidden;
+                img {
+                  width: 100%;
+                }
+              }
+            }
+            .author {
+              font-size: 0.14rem;
+              color: #666;
+              padding: 0.05rem 0.1rem;
+              span {
+                color: #999;
+                font-size: 0.12rem;
+                padding-left: 0.05rem;
+              }
+            }
+          }
+          .linkMore {
+            text-align: center;
+            padding: 0.1rem 0;
+            border-bottom: 1px solid #e6e6e6;
+            a {
+              font-size: 0.12rem;
+              color: #278ccf;
+              img {
+                margin-left: 0.05rem;
+                width: 0.05rem;
+              }
+            }
+          }
         }
         .listLoad {
           margin-bottom: 0.1rem;

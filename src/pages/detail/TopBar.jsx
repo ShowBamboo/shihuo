@@ -13,28 +13,22 @@ export default withRouter(function TopBar(props) {
     }
   };
 
-  let goBack = props => {
-    return () => {
-      props.history.goBack();
-    };
+  let goBack = () => {
+    props.history.goBack();
   };
 
-  let goHome = props => {
-    return () => {
-      props.history.push("/index/home");
-    };
+  let goHome = () => {
+    props.history.push("/index/home");
   };
 
-  let goUser = props => {
-    return () => {
-      props.history.push("/index/user");
-    };
+  let goUser = () => {
+    props.history.push("/index/user");
   };
 
   return (
     <TopBarWrap>
       <div className="top_bar">
-        <div className="goback" onClick={goBack(props)}>
+        <div className="goback" onClick={goBack}>
           <img
             src="//sh1.hoopchina.com.cn/fis_static/shihuomobile/static/common/widget/header/head_back_b142dc1.png"
             alt=""
@@ -50,12 +44,12 @@ export default withRouter(function TopBar(props) {
         <div className="header_nav" id="header_nav" style={{ display: state }}>
           <div className="inner">
             <ul>
-              <li onClick={goHome(props)}>
+              <li onClick={goHome}>
                 <a href="javascripts:;" className="icons index">
                   首页
                 </a>
               </li>
-              <li onClick={goUser(props)}>
+              <li onClick={goUser}>
                 <a href="javascripts:;" className="icons me">
                   我的
                 </a>

@@ -73,38 +73,42 @@ class Zhuangbei extends Component {
         "Jordan",
         "全部"
       ]
-    ]
+    ],
+    position: "static"
   };
   render() {
     return (
-      <>
-        <Search
-          title={this.state.value}
-          bgColor={this.state.bgColor}
-          inputBg={this.state.inputBg}
-        ></Search>
-        <Menu></Menu>
-        <Banner msg={this.state.basketball}></Banner>
-        <Tag tag={this.state.tags[0]}></Tag>
-        <Banner msg={this.state.running}></Banner>
-        <Tag tag={this.state.tags[1]}></Tag>
-        <Banner msg={this.state.casual}></Banner>
-        <Tag tag={this.state.tags[2]}></Tag>
-        <Banner msg={this.state.fitness}></Banner>
-        <Tag tag={this.state.tags[3]}></Tag>
-        <div
-          className="h2"
-          style={{
-            fontSize: "16px",
-            background: "#fff",
-            padding: ".1rem 0 0 .1rem"
-          }}
-        >
-          最新推荐
+      <div id="zhuangbeiWrap" style={{ height: "100%" }}>
+        <div id="scroll">
+          <Search
+            title={this.state.value}
+            bgColor={this.state.bgColor}
+            inputBg={this.state.inputBg}
+            position={this.state.position}
+          ></Search>
+          <Menu></Menu>
+          <Banner msg={this.state.basketball}></Banner>
+          <Tag tag={this.state.tags[0]}></Tag>
+          <Banner msg={this.state.running}></Banner>
+          <Tag tag={this.state.tags[1]}></Tag>
+          <Banner msg={this.state.casual}></Banner>
+          <Tag tag={this.state.tags[2]}></Tag>
+          <Banner msg={this.state.fitness}></Banner>
+          <Tag tag={this.state.tags[3]}></Tag>
+          <div
+            className="h2"
+            style={{
+              fontSize: "16px",
+              background: "#fff",
+              padding: ".1rem 0 0 .1rem"
+            }}
+          >
+            最新推荐
+          </div>
+          <Basketball></Basketball>
+          <GoTop></GoTop>
         </div>
-        <Basketball></Basketball>
-        <GoTop></GoTop>
-      </>
+      </div>
     );
   }
 }

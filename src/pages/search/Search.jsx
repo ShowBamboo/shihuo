@@ -23,8 +23,30 @@ function Search(props) {
     setdata(result.data);
   };
 
+  // 点击标签
+  let Search = e => {
+    props.history.push({
+      pathname: "/searchResult",
+      query: {
+        keywords: e.target.innerHTML
+      }
+    });
+  };
+
   let cancel = () => {
     props.history.goBack();
+  };
+
+  //点击提示列表
+  let handleClick = keywords => {
+    return () => {
+      props.history.push({
+        pathname: "/searchResult",
+        query: {
+          keywords
+        }
+      });
+    };
   };
 
   return (
@@ -69,15 +91,33 @@ function Search(props) {
           <dl>
             <dt>热门搜索</dt>
             <dd className="sear_hot">
-              <a href="javascripts:;">红包</a>
-              <a href="javascripts:;">AJ11</a>
-              <a href="javascripts:;">欧文4</a>
-              <a href="javascripts:;">LBJ15</a>
-              <a href="javascripts:;">ultra boost</a>
-              <a href="javascripts:;">Jordan</a>
-              <a href="javascripts:;">Air force 1</a>
-              <a href="javascripts:;">球鞋90秒</a>
-              <a href="javascripts:;">React</a>
+              <a href="javascripts:;" onClick={Search}>
+                红包
+              </a>
+              <a href="javascripts:;" onClick={Search}>
+                AJ11
+              </a>
+              <a href="javascripts:;" onClick={Search}>
+                欧文4
+              </a>
+              <a href="javascripts:;" onClick={Search}>
+                LBJ15
+              </a>
+              <a href="javascripts:;" onClick={Search}>
+                ultra boost
+              </a>
+              <a href="javascripts:;" onClick={Search}>
+                Jordan
+              </a>
+              <a href="javascripts:;" onClick={Search}>
+                Air force 1
+              </a>
+              <a href="javascripts:;" onClick={Search}>
+                球鞋90秒
+              </a>
+              <a href="javascripts:;" onClick={Search}>
+                React
+              </a>
             </dd>
             <dt className="his" style={{ display: "none" }}>
               历史搜索
@@ -97,7 +137,7 @@ function Search(props) {
         <div className="inner" id="searchRelate" style={{ display: reset }}>
           <ul>
             {data.map((value, index) => (
-              <li key={index}>
+              <li key={index} onClick={handleClick(value)}>
                 <a href="javascripts:;">{value}</a>
               </li>
             ))}

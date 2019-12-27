@@ -43,8 +43,9 @@ class List extends Component {
 
     bScroll.on("pullingUp", async () => {
       let resultMore = await get({
-        url: `/api/youhui/list?r=999&page=2&page_size=30&publish_date=2019-12-23+15%3A52%3A24`
+        url: `/api/youhui/list?r=999&page=2&page_size=30&publish_date=2019-12-27+11%3A12%3A35`
       });
+      console.log(resultMore.data);
 
       this.setState({
         result: [...this.state.result, ...resultMore.data]

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import BScroll from "better-scroll";
 
 import { ListWrap } from "./styledList";
 
@@ -17,6 +18,29 @@ export class Basketball extends Component {
     this.setState({
       result: data.data
     });
+
+    if (document.getElementById("zhuangbeiWrap")) {
+      let bScroll = new BScroll(document.getElementById("zhuangbeiWrap"), {
+        pullUpLoad: true,
+        click: true,
+        probeType: 2,
+        mouseWheel: true
+      });
+
+      bScroll.on("pullingUp", async () => {
+        let resultMore = await get({
+          url: `/api/homefis/getNews?pageSize=20&param_str=1577320212_1577428964_2&type=basketball&channel_type=`
+        });
+        console.log(resultMore.data);
+
+        this.setState({
+          result: [...this.state.result, ...resultMore.data]
+        });
+
+        bScroll.refresh();
+        bScroll.finishPullUp();
+      });
+    }
   }
 
   render() {

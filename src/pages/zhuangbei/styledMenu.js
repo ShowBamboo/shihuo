@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const MenuWrap = styled.div`
   .menu-area {
-    margin-top: 0.45rem;
+    /* margin-top: 0.45rem; */
     background: #fff;
     ul {
       display: flex;
